@@ -1,0 +1,48 @@
+/* src/index.css */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green:       #2d6a4f;
+  --green-light: #40916c;
+  --green-pale:  #d8f3dc;
+  --gold:        #c9a84c;
+  --bg:          #f8f9fa;
+  --surface:     #ffffff;
+  --border:      #e9ecef;
+  --text:        #212529;
+  --text-muted:  #6c757d;
+  --danger:      #dc3545;
+  --radius:      10px;
+  --shadow:      0 2px 12px rgba(0,0,0,0.08);
+  --font:        'Inter', system-ui, sans-serif;
+}
+
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { cursor: pointer; font-family: var(--font); border: none; border-radius: var(--radius); font-size: 0.9rem; font-weight: 500; transition: all 0.15s ease; }
+input, textarea, select { font-family: var(--font); font-size: 0.9rem; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.9rem; width: 100%; outline: none; transition: border-color 0.15s; background: var(--surface); color: var(--text); }
+input:focus, textarea:focus, select:focus { border-color: var(--green); }
+
+.btn-primary { background: var(--green); color: white; padding: 0.6rem 1.4rem; }
+.btn-primary:hover { background: var(--green-light); }
+.btn-secondary { background: transparent; color: var(--green); border: 1.5px solid var(--green); padding: 0.6rem 1.4rem; }
+.btn-secondary:hover { background: var(--green-pale); }
+.btn-danger { background: var(--danger); color: white; padding: 0.5rem 1rem; font-size: 0.8rem; }
+.btn-danger:hover { opacity: 0.85; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+.badge-green { background: var(--green-pale); color: var(--green); }
+.badge-gold { background: #fef9e7; color: #b7860b; }
+.badge-grey { background: #f1f3f5; color: var(--text-muted); }
+.demo-banner { background: linear-gradient(135deg, var(--gold), #b8860b); color: white; text-align: center; padding: 0.5rem; font-size: 0.82rem; font-weight: 500; }
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; gap: 1rem; }
+.page-header h1 { font-size: 1.5rem; font-weight: 700; }
+.empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+.empty-state .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.35rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .page-header { flex-direction: column; align-items: flex-start; } }
